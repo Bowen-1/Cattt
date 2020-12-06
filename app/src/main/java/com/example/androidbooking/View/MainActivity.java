@@ -3,6 +3,7 @@ package com.example.androidbooking.View;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private CatViewModel catViewModel;
     private TextView textuser;
+//    private TextView name;
+//    private Button button;
 
 
 //
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         textuser = findViewById(R.id.textUser);
+//        button = findViewById(R.id.like);
+//        name = findViewById(R.id.name);
         checkIfSignedIn();
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -89,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
 //        mCatList.setAdapter(mCatAdapter);
 
     }
+//    public void getfavorite(View view){
+//        String favoritename = name.getText().toString();
+//        Toast.makeText(this, "Welcome " + favoritename, Toast.LENGTH_SHORT).show();
+//    }
+
 
     private void checkIfSignedIn() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

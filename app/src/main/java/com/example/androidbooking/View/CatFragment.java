@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -25,7 +28,9 @@ public class CatFragment extends Fragment {
     private CatViewModel catViewModel;
 //    private EditText editText;
 //    private ImageView imageView;
-//    private Button button;
+    private TextView name;
+    Button button;
+
 
 //
 
@@ -39,9 +44,17 @@ public class CatFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_cat, container, false);
         RecyclerView recyclerView = (RecyclerView)root.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        button = root.findViewById(R.id.like);
+        name = root.findViewById(R.id.name);
 //
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                getfavorite();
+//            }
+//        });
 
-//
+
 //        ArrayList<Cat>cats = new ArrayList<>();
 //        cats.add(new Cat("asf","sdgsfg","wasf"));
 //        cats.add(new Cat("asf","sdgsfg","wasf"));
@@ -53,44 +66,13 @@ public class CatFragment extends Fragment {
 //
         mCatAdapter = new CatAdapter(getallCats());
         recyclerView.setAdapter(mCatAdapter);
-
-
-
-
-
-
-
         return root;
     }
-
-
-
-
-//        editText = editText.findViewById(R.id.editText);
-//        imageView = imageView.findViewById(R.id.imageView);
-
-//        catViewModel = new ViewModelProvider(this).get(CatViewModel.class);
-//        search();
-
-//        mCatList = mCatList.findViewById(R.id.recyclerview);
-//        mCatList.hasFixedSize();
-//        mCatList.setLayoutManager(new LinearLayoutManager(this));
-//        ArrayList<Cat> cats = new ArrayList<>();
-//        cats.add(new Cat("cat1",R.drawable.catcartoon));
-//        cats.add(new Cat("cat2",R.drawable.catcartoon));
+//    public void getfavorite(){
+//        String favoritename = name.getText().toString();
+//    }
 //
-//        mCatAdapter = new CatAdapter(cats);
-//        mCatList.setAdapter(mCatAdapter);
-//        catViewModel.getCat().observe(this, new Observer<Cat>() {
-//            @Override
-//
-//            public void onChanged(Cat cat) {
-//                Glide.with(CatFragment.this).load(cat.getImageUrl()).into(imageView);
-//            }
-//        });
-//        mCatList = mCatList.findViewById(R.id.recyclerview);
-//        mCatList.hasFixedSize();
-//        mCatList.setLayoutManager(new LinearLayoutManager(this));
+
 
 //    public void search(){
 //        catViewModel.searchCat();

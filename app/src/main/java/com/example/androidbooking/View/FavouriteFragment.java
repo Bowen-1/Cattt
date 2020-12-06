@@ -32,10 +32,10 @@ public class FavouriteFragment extends Fragment {
 
 
         ArrayList<Cat>cats = new ArrayList<>();
-        cats.add(new Cat("sdf"));
-        cats.add(new Cat("sdgsfg"));
-        cats.add(new Cat("sdgsfg"));
-        cats.add(new Cat("sdgsfg"));
+        cats.add(new Cat("Abyssinian"));
+        cats.add(new Cat("Aegean"));
+        cats.add(new Cat("AmericanBobtail"));
+        cats.add(new Cat("AmericanCurl"));
         fCatAdaper = new FavouriteAdapter(cats);
         recyclerView.setAdapter(fCatAdaper);
 
