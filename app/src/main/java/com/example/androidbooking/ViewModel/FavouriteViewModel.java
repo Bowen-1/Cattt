@@ -14,5 +14,4 @@ public class FavouriteViewModel extends ViewModel {
     public FavouriteViewModel(){
         databaseReference  = FirebaseDatabase.getInstance().getReference();
     }
-
 }

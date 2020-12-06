@@ -30,7 +30,6 @@ public class FavouriteFragment extends Fragment {
         RecyclerView recyclerView=(RecyclerView)root.findViewById(R.id.favourite);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
         ArrayList<Cat>cats = new ArrayList<>();
         cats.add(new Cat("Abyssinian"));
         cats.add(new Cat("Aegean"));
@@ -38,8 +37,6 @@ public class FavouriteFragment extends Fragment {
         cats.add(new Cat("AmericanCurl"));
         fCatAdaper = new FavouriteAdapter(cats);
         recyclerView.setAdapter(fCatAdaper);
-
-
 
 
         return root;

@@ -25,7 +25,6 @@ public class CatViewModel extends ViewModel {
       databaseReference  = FirebaseDatabase.getInstance().getReference();
 
     }
-
     public List<Cat>getAllcats(){
         List<Cat>cats = new ArrayList<>();
         databaseReference.child("Cats").addValueEventListener(new ValueEventListener() {
@@ -38,7 +37,6 @@ public class CatViewModel extends ViewModel {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 System.out.println("error");
-
             }
         });
         return cats;

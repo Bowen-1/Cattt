@@ -31,18 +31,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private CatViewModel catViewModel;
     private TextView textuser;
-//    private TextView name;
-//    private Button button;
-
-
-//
-//    private EditText editTextTypeName;
-//    private EditText editTextIntell;
-//    private ImageView imageView;
-//    RecyclerView mCatList;
-//    RecyclerView.Adapter mCatAdapter;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
         checkIfSignedIn();
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_cat, R.id.navigation_favourite, R.id.navigation_account)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController);
+
 //        editTextTypeName = findViewById(R.id.editTextTypeName);
 //        editTextIntell = findViewById(R.id.editTextintell);
 
@@ -74,12 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_cat, R.id.navigation_favourite, R.id.navigation_account)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
 
 
 
@@ -124,9 +114,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-    public void showUsernam(){
-
-    }
+//    public void showUsernam(){
+//
+//    }
 //
 //        public void updateCat(View view){
 //        catViewModel.getCatfromapi(editTextTypeName.getText().toString());

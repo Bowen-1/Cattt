@@ -29,7 +29,7 @@ public class CatFragment extends Fragment {
 //    private EditText editText;
 //    private ImageView imageView;
     private TextView name;
-    Button button;
+    private Button button;
 
 
 //
@@ -68,6 +68,9 @@ public class CatFragment extends Fragment {
         recyclerView.setAdapter(mCatAdapter);
         return root;
     }
+    public List<Cat> getallCats(){
+        return catViewModel.getAllcats();
+    }
 //    public void getfavorite(){
 //        String favoritename = name.getText().toString();
 //    }
@@ -78,9 +81,7 @@ public class CatFragment extends Fragment {
 //        catViewModel.searchCat();
 //    }
 
-    public List<Cat> getallCats(){
-       return catViewModel.getAllcats();
-    }
+
 
 
 //    public void updateCat(View view){

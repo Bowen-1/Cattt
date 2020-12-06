@@ -16,7 +16,6 @@ import java.util.List;
 
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.ViewHolder> {
     private List<Cat> fcats;
-
     public  FavouriteAdapter(List<Cat>cats){
         this.fcats = cats;
     }
@@ -40,14 +39,12 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
         return fcats.size();
     }
 
-
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView favouritename;
 
         ViewHolder(View itemView) {
             super(itemView);
             favouritename = itemView.findViewById(R.id.favourite_name);
-
 
         }
     }
